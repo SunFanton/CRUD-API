@@ -1,0 +1,6 @@
+Aclaracion importante:
+Para poder copiar el archivo jar del servicio rest con la configuracion del datasource para que funcione en el container de mysql de la red de Docker, 
+en Eclipse de debe generar el jar pasando por alto el test que hace Maven y asi no produzca un error.
+Para ello:
+click derecho sobre pom.xml -> Run as -> Maven Build
+Se abre una ventana, en los goals escribir "install" y tildar la opcion "Skip Tests".

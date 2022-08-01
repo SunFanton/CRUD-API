@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Actualizar Usuario</title>
+ 
+	<link rel="stylesheet" th:href="@{/form-style.css}">
+
+</head>
+
+<body>
+
+	<h2>Actualizar datos usuario</h2>
+
+	<form action="#" th:action="@{/update}" th:object="${usuario}"
+		method="POST">
+
+		<!-- Campo oculto para enviar la Id para actualizar -->
+		<input type="hidden" th:field="*{id}" /> 
+		
+		<table>
+
+			<tr>
+				<td><label for="nombre">NOMBRE</label></td>
+				<td><input type="text" th:field="*{nombre}" id="nombre"
+					name="nombre" maxlength="300" required></td>
+			</tr>
+
+			<tr>
+				<td><label for="apellido">APELLIDO</label></td>
+				<td><input type="text" th:field="*{apellido}" id="apellido"
+					name="apellido" maxlength="300" required></td>
+			</tr>
+
+			<tr>
+				<td><label for="dni">DNI</label></td>
+				<td><input type="text" th:field="*{dni}" id="dni" name="dni"
+					maxlength="300" required></td>
+			</tr>
+
+			<tr>
+				<td><label for="fecha_nac">NACIMIENTO</label></td>
+				<td><input type="date" th:field="*{fechaNac}" id="fecha_nac"
+					name="fecha_nac" maxlength="300" required></td>
+			</tr>
+
+			<tr>
+				<td><label for="profesion">PROFESION</label></td>
+				<td><input type="text" th:field="*{profesion}" id="profesion"
+					name="profesion" maxlength="300" required></td>
+			</tr>
+
+		</table>
+		
+		<button type="submit" class="btn-guardar">Actualizar Usuario</button>
+		
+	</form>
+
+	<hr>
+
+	<a th:href="@{/}">Volver a la lista de Usuarios</a>
+
+</body>
+</html>

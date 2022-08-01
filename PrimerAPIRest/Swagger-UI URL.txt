@@ -1,0 +1,3 @@
+URL para acceder a Swagger UI de esta API-Rest (usando puerto 8080 en SpringBoot):
+
+http://localhost:8080/swagger-ui/index.html#/

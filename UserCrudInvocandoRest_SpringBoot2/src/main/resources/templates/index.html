@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Usuarios</title>
+
+	<link rel="stylesheet" th:href="@{/index-style.css}">
+
+</head>
+<body>
+
+	<h1>TABLA USUARIOS</h1>
+
+	<a th:href="@{/addnew}" class="btn-nuevoUser">Agregar Usuario</a>
+
+	<table border="1" frame="void" rules="rows">
+	
+		<thead>
+			<tr>
+				<th class="cabecera">ID_USUARIO</th>
+				<th class="cabecera">NOMBRE</th>
+				<th class="cabecera">APELLIDO</th>
+				<th class="cabecera">DNI</th>
+				<th class="cabecera">FECHA NACIMIENTO</th>
+				<th class="cabecera">PROFESION</th>
+				<th class="cabecera">ACCION</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="usuario : ${LISTA_USUARIOS}" class="filas">
+			
+				<td class="celdas" th:text="${usuario.id}"></td>
+				<td class="celdas" th:text="${usuario.nombre}"></td>
+				<td class="celdas" th:text="${usuario.apellido}"></td>
+				<td class="celdas" th:text="${usuario.dni}"></td>
+				<td class="celdas" th:text="${usuario.fechaNac}"></td>
+				<td class="celdas" th:text="${usuario.profesion}"></td>
+				<td class="celdas">
+					<a th:href="@{/showFormForUpdate/{id}(id=${usuario.id})}" class="linkActualiza">Actualizar</a>&nbsp;&nbsp;<a th:href="@{/deleteEmployee/{id}(id=${usuario.id})}" class="linkElimina">Eliminar</a>
+				</td>
+				
+			</tr>
+		</tbody>	
+	
+	</table>
+
+
+
+</body>
+</html>

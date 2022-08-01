@@ -1,0 +1,11 @@
+
+CREATE TABLE IF NOT EXISTS`personas` (
+  `ID` int(20) NOT NULL AUTO_INCREMENT,
+  `NOMBRE` varchar(50) NOT NULL,
+  `APELLIDO` varchar(50) NOT NULL,
+  `DNI` int(11) NOT NULL,
+  `FECHA_NAC` varchar(20) NOT NULL,
+  `PROFESION` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `DNI` (`DNI`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
