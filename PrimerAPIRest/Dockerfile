@@ -1,4 +1,10 @@
-FROM openjdk:8
+FROM maven:3.6-jdk-8-alpine AS builder
+WORKDIR /app
+COPY pom.xml .
+RUN mvn -e -B dependency:resolve
+COPY src ./src
+RUN mvn -e -B package -Dmaven.test.skip=true
 
-ADD target/PrimerAPIRest.jar PrimerAPIRest.jar
+FROM openjdk:8-jre-alpine
+COPY --from=builder /app/target/PrimerAPIRest.jar PrimerAPIRest.jar
 CMD ["java", "-jar","PrimerAPIRest.jar"]

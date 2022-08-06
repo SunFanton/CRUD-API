@@ -26,7 +26,7 @@ services:
   backend:
     depends_on:
       - mysqldb
-    image: sunfan12/apirest-producer:v0.0.1
+    image: sunfan12/apirest-producer:v0.0.2
     build:
       context: ./PrimerAPIRest
       dockerfile: Dockerfile
@@ -46,7 +46,7 @@ services:
   frontend:
     depends_on:
       - backend
-    image: sunfan12/apirest-consumer:v0.0.1
+    image: sunfan12/apirest-consumer:v0.0.2
     build:
       context: ./UserCrudInvocandoRest_SpringBoot2
       dockerfile: Dockerfile
